@@ -1,0 +1,9 @@
+{% extends "base.html" %} {% block content %}
+<div class="jumbotron">
+  <h1 class="display-4">Pricing Service</h1>
+  <p class="lead">We scan online store websites to alert you of price drops in items that interest you.</p>
+  <hr class="my-4" />
+  <p>Just sign up, and get started by adding the URL of an item that you wish to track. We'll do the rest!</p>
+  <a href="{{ url_for('users.new_user') }}" class="btn btn-primary btn-lg">Get started</a>
+</div>
+{% endblock %}

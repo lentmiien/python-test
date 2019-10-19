@@ -1,0 +1,22 @@
+{% extends "base.html" %} {% block content %}
+<header>
+  <h1>Alerts</h1>
+</header>
+<section>
+  <div class="list-group mb-3">
+    {% for alert in alerts %}
+    <div class="list-group-item">
+      <h4>{{ alert.name }}</h4>
+      <p>
+        <a href="{{ alert.item.url }}">{{ alert.item.url }}</a> (last price ${{ alert.item.price }})
+      </p>
+      <a href="{{ url_for('alerts.edit_alert', alert_id=alert._id) }}" class="btn btn-secondary">Edit</a>
+      <a href="{{ url_for('alerts.delete_alert', alert_id=alert._id) }}" class="btn btn-danger">Delete</a>
+    </div>
+    {% endfor %}
+  </div>
+  <a href="{{ url_for('alerts.new_alert') }}" class="btn btn-primary">
+    Create new
+  </a>
+</section>
+{% endblock %}
