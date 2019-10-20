@@ -1,0 +1,40 @@
+{% extends "base.html" %} {% block content %}
+<header>
+  <h1>Mnist 0-9 recognition</h1>
+</header>
+<section>
+  <h4>Draw a digit between 0-9 below, and press Submit to know what digit you drew!</h4>
+  <canvas
+    id="input_canvas"
+    width="280px"
+    height="280px"
+    onmousemove="ProcessMouse(event)"
+    onmousedown="Status(1)"
+    onmouseup="Status(0)"
+  ></canvas
+  ><br />
+  <button class="btn btn-primary" onclick="SubmitData()">Submit</button>
+  <button class="btn btn-danger" onclick="Clear()">Clear</button><br />
+  <table class="table" id="probability">
+    <thead>
+      <tr>
+        <th scope="col">0</th>
+        <th scope="col">1</th>
+        <th scope="col">2</th>
+        <th scope="col">3</th>
+        <th scope="col">4</th>
+        <th scope="col">5</th>
+        <th scope="col">6</th>
+        <th scope="col">7</th>
+        <th scope="col">8</th>
+        <th scope="col">9</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr id="data"></tr>
+    </tbody>
+  </table>
+
+  <script src="../script.js"></script>
+</section>
+{% endblock %}
