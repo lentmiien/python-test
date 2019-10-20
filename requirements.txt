@@ -1,0 +1,6 @@
+Flask==1.0.2
+pymongo==3.9.0
+beautifulsoup4==4.7.1
+request==2019.4.13
+passlib==1.7.1
+uwsgi
